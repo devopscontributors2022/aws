@@ -1,7 +1,7 @@
 # aws
 
 
-List of services:
+**List of services:**
 
 1.	IAM
 2.	S3
@@ -19,7 +19,7 @@ List of services:
 14.	Cloud Formation
 15.	API gateway
 
-IAM: Identity Access Management  {Youtube video created :Create a video on how to create a aws user from root account and add to Group with policy attached to it !- https://youtu.be/hCaWweuZlSQ}
+**IAM: Identity Access Management ** {Youtube video created :Create a video on how to create a aws user from root account and add to Group with policy attached to it !- https://youtu.be/hCaWweuZlSQ}
 
 1.	User ;
 2.	Group : Create a group -> Add Users-> Add Policy 
@@ -33,7 +33,7 @@ c.	2 types : AWS Managed (600+) and Customer managed policy
 a.	For communication between AWS services 
 
 
-EC2 :  AMI,ELB,EBS,ASG
+**EC2 :  AMI,ELB,EBS,ASG**
 
 
 Create EC2 instance : https://youtu.be/T1Lm484Zgfc - youtube video created for creating linux machine and connecting in to it ! 
