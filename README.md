@@ -1,7 +1,7 @@
 # aws
 
 
-**List of services:**
+## **List of services:**
 
 1.	IAM
 2.	S3
@@ -19,7 +19,9 @@
 14.	Cloud Formation
 15.	API gateway
 
-**IAM: Identity Access Management ** {Youtube video created :Create a video on how to create a aws user from root account and add to Group with policy attached to it !- https://youtu.be/hCaWweuZlSQ}
+## **IAM: Identity Access Management ** 
+
+{Youtube video created :Create a video on how to create a aws user from root account and add to Group with policy attached to it !- https://youtu.be/hCaWweuZlSQ}
 
 1.	User ;
 2.	Group : Create a group -> Add Users-> Add Policy 
@@ -33,12 +35,14 @@ c.	2 types : AWS Managed (600+) and Customer managed policy
 a.	For communication between AWS services 
 
 
-**EC2 :  AMI,ELB,EBS,ASG**
+## **EC2 :  AMI,ELB,EBS,ASG**
 
 
 Create EC2 instance : https://youtu.be/T1Lm484Zgfc - youtube video created for creating linux machine and connecting in to it ! 
     https://youtu.be/DNHtPqI4lpM - connect without ssh or putty video created !!
-Launch Types : 
+    
+**Launch Types :**
+
 1.	On demand instance : For shorter workload , predictable price
 2.	Reserved instance :  F or long workloads (Reserve for > 1 year )
 3.	Convertible reserved Instance :  Reserved instance , but RAM from 16 GB -> 64 GB can be changed during performance testing , and brought back once testing done
@@ -47,16 +51,19 @@ Launch Types :
 6.	Dedicated Instance : Other customer will not share your hardware
 7.	Dedicated Hosts : Book an entire physical server 
 
-User Data in EC2 ?
+### **User Data in EC2 ?**
+
 •	To save time of installing some software give cmd in user data , whenever launching the Ec2 instance automatically all the cmds mentioned will be installed in machine 
 How to connect to Linux Ec2 Instance ?
 •	In git bash terminal :   Ssh –i <pemfilename.pem>  Ubuntu@<Public IPV4 address>
 
-How to create a snapshot of volume in EC2 ?
-Create a snapshot ?
+### How to create a snapshot of volume in EC2 ?
 
-How to create AMI (Amazon machine image)? 
-Elastic Load Balancing  (ELB)
+
+### How to create AMI (Amazon machine image)? 
+
+### Elastic Load Balancing  (ELB)
+
 •	Round robin method used to distribute the load 
 •	Vertical scaling vs Horizontal scaling ? 
 VERTICAL SCALING	HORIZONTAL SCALING
@@ -66,13 +73,14 @@ Stop the instance , and then modify instance type (t2.nano -> t2.micro or any ch
 ELB Diagram :
 Amazon.in -> ELB URL (DNS Name) -> EC2 instance can be increased or decreased based on the load (User can set min instance and max instance to manage the cost and high availability)
 
-3 types of ELB :
+**3 types of ELB :**
+
 	ALB - Application Load Balancer : balance the load based on traffic from HTTP or HTTPS listeners 
 	NLB – Network Load Balancer
 	GLB - Gateway Load Balance
 
 
-Creation of ALB : 
+### Creation of ALB : 
 •	Name of ALB 
 •	Schema : Internet facing
 •	IP address type : IPV4
@@ -91,14 +99,14 @@ o	Listeners :
 •	Click on ‘Create load balancer’
 •	How to check the ALB working fine ? 
 o	Copy and paste DNS name in browser  
-Target groups : 
+### Target groups : 
 •	Name of target group
 •	Target type : Instance 
 o	Select respective EC2 instances
 •	Select Protocol and Port {For Http://34.4.53.4:4444 then Protocol : HTTP | port : 4444}
 •	Health checks
 •	Click ‘Target group’
-Health Checks ? {Can be configured as part of creating Target Groups}
+### Health Checks ? {Can be configured as part of creating Target Groups}
 •	This check is part of ELB creation 
 •	To check whether target instance added is working fine 
 •	How this achieved ?
@@ -112,13 +120,14 @@ o	Advanced settings :
 	Healthy threshold : 5 -> No of times to success should come , to consider a unhealthy target as healthy target again 
 	Success codes : 200 -> Http code to consider as success
 
-ASG : Auto Scaling Group 
+### ASG : Auto Scaling Group 
 
 AMI ?
 
 
 
-S3 :  https://youtu.be/L5c10vRhOl8 - Youtube video created for how to create bucket and add file, delete file and bucket !! 
+## S3 :  https://youtu.be/L5c10vRhOl8 - Youtube video created for how to create bucket and add file, delete file and bucket !! 
+
 •	Bucket name should be unique across all regions
 •	Rules in bucket name : no space and uppercase  
 •	In S3 everything is treated as objects
@@ -142,7 +151,7 @@ o	Hit the index.html file url of S3 in browser , to see the result
 •	To archive the older data use different S3 storage service :
 o	
 
-CLOUD FRONT:
+## CLOUD FRONT:
 
 •	Its CDN {Content Delivery Network}
 •	Its cache service  - It makes a copy of data
@@ -154,7 +163,7 @@ o	Advantage : Data transfer cost will be reduced
 o	If any file in S3 changes, change will not get directly updated in cloud front , invalidation is required for a particular file level or for bucket level to sync the changes . 
  
 
-RDS : RELATIONAL DATABASE SERVICE  - Structured DBs {NO SQL DB – Dynamo DB}
+## RDS : RELATIONAL DATABASE SERVICE  - Structured DBs {NO SQL DB – Dynamo DB}
 
 Why cloud DB ? 
 
@@ -171,7 +180,7 @@ Types of RDS ?
 Advantages of RDS : 
 •	Netflix and Hotstar uses AWS 
 
-How to create MySQL RDS ?
+### How to create MySQL RDS ?
 •	Choose ‘standard ‘ type -> so that many options can be configured by user 
 •	Select RDS – MYSQL 
 •	MYSQL Version : 5.6
@@ -213,7 +222,8 @@ o	Password :
 o	Port 
 o	Possible to take snapshot ? Yes , and able to export to S3 bucket  
     
-ELASTIC BEAN STALK
+## **ELASTIC BEAN STALK**
+    
 •	Its platform  as service 
 •	 It’s free , no need to pay
 •	Used to host web apps
@@ -232,7 +242,7 @@ o	Click ‘create environment ‘ -> AWS will take up to 8 mins to create the en
 	Possible to update the default configuration created by beanstalk like EC2 t2.micro -> t3.micro  and other details ? YES possible 
  
 
-CODE COMMIT  {Its developer tool in AWS}
+## **CODE COMMIT  {Its developer tool in AWS}**
 •	Note : 
 o	git -> version control system ; 
 o	github/gitlab/bitbucket -> Source code management tool {Can be public / private}
@@ -257,7 +267,7 @@ o	Create code commit repository ?
 CODE PIPELINE
 
 
-CLOUD WATCH
+## **CLOUD WATCH**
 •	Its Monitoring service to monitor a  server and other aws services 
 •	Various functionalities in cloud watch :
 o	Alarms
@@ -265,7 +275,7 @@ o	Logs
 o	Metrics : Generate and visualize graph to user .Example : Monitor and display the EC2 instance CPU utilization % to user . 
 	Youtube video created for this : https://youtu.be/wJT7jaKMp1I
 	
-o	Events
+o	**Events**
 	Now referred as Amazon Event Bridge  : Created a example below 
     
 •	Cloudwatch events example :  https://youtu.be/wJT7jaKMp1I - YOutube video created for cloudwatch scenario !! 
@@ -301,8 +311,8 @@ o	top -> to check the cpu utilization %
 o	Free : 
 	10 metrics + 10 alarms 
 	1 Lakh API requests
-    
-CLOUD TRAIL
+   
+## **CLOUD TRAIL**
 •	For security purpose
 •	Continuously log AWS account activity
 •	Under Event history > AWS captures and displays all activities performed on a account in last 90 days
@@ -310,7 +320,7 @@ CLOUD TRAIL
 •	Info of region, AWS resource name, system IP used ,AWS access key 
 •	
 
-VPC
+## VPC
  
 Note : If you use default VPC , private address will always start with 172.31.*.* 
 Why VPC creation is required?
@@ -344,13 +354,13 @@ o	224-239 - Military
 o	240-255 – Research 
 
 
-Creating a VPC (Virtual Private Cloud) :
+### **Creating a VPC (Virtual Private Cloud) :**
  
 Note : In security group , 
 •	Inbound rule : Rule to connect from Internet -> EC2
 •	Outbound rule : Rule to connect from EC2 -> Internet
 
-AWS CLI {Create youtube video for what is CLI in AWS and how to connect your windows machine with AWS via CLI? }
+## AWS CLI {Create youtube video for what is CLI in AWS and how to connect your windows machine with AWS via CLI? }
 •	Create IAM Access key and Id {its mandatory to perform AWS CLI } for a aws user not for root user
 •	Install aws cli in windows machine
 o	How to install CLI ?
@@ -381,10 +391,10 @@ o	Scenario {youtube video need to prepare}
 
 
 
-CLOUD FORMATION
+## CLOUD FORMATION
 
 
-LAMBDA
+## LAMBDA
 •	LIST OF POSSIBLE AWS LAMBDA AUTOMATION SCENARIOS AND SOLUTIONS
 SNS , SES
 API GATEWAY
@@ -392,7 +402,7 @@ ROUTE 53
 
 
 
-PUTTY :
+## PUTTY :
 •	SSH protocol used to connect with linux machines 
 Different ways to connect with EC2 instance ?
 •	Linux : 
