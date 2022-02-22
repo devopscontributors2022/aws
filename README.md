@@ -88,17 +88,20 @@ Amazon.in -> ELB URL (DNS Name) -> EC2 instance can be increased or decreased ba
 •	Mappings : Atleast 2 AZs
 •	Security groups
 •	Listeners and ports {Very important} + Add Target group {Create target group if not available}
+
 o	Listeners : 
 	Listeners in ELB ? 
 	Its process ; checks /listens to connection request using protocol and port 
 	For example : selenium server is running on http and port 4444
 	Then , listener protocol and port : http and 4444
+
 	2 types of protocol in general : 
 •	Http : 80 
 •	Https :443
 •	Click on ‘Create load balancer’
 •	How to check the ALB working fine ? 
 o	Copy and paste DNS name in browser  
+
 ### Target groups : 
 •	Name of target group
 •	Target type : Instance 
